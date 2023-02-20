@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal soud</title>
+</head>
+    <h1 id ='sound'></h1>
+    <input id ="name", type="text">
+    <button onclick="getsound()">API 요청</button>
+    <script>
+        function getsound(){
+            const name = document.getElementById('name').value
+            fetch(`http://localhost:3000/sound/${name}`)
+            //  원래 따옴표 ; 옆에 있는것 ' '을 쓰면 변수를 못 넣는데, 1번 옆에 있는것으로 하면 위에것 처럼 변수를 넣을 수 있다. 
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log(data)
+                    document.getElementById('sound').innerHTML = data.sound   
+                });
+ 
+        }
+
+    </script>
+<body>
+    
+</body>
+</html>
