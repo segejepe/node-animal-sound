@@ -12,7 +12,7 @@
     <script>
         function getsound(){
             const name = document.getElementById('name').value
-            fetch(`https://github.com/segejepe/node-animal-sound.git/sound/${name}`)
+            fetch(`http://localhost:3000/sound/${name}`)
             //  원래 따옴표 ; 옆에 있는것 ' '을 쓰면 변수를 못 넣는데, 1번 옆에 있는것으로 하면 위에것 처럼 변수를 넣을 수 있다. 
                 .then((response) => response.json())
                 .then((data) => {
